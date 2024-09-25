@@ -14,4 +14,10 @@ app.use(express.urlencoded({extended: true, limit: "16kb"})) // Encodes the url 
 app.use(express.static("public")) // Used to tell the server to store any static assests in the public folder
 app.use(cookieParser())
 
+// routes import
+import userRouter from './routes/user.routes.js'
+
+//routes declaration
+app.use("/api/v1/users", userRouter)
+
 export { app }
